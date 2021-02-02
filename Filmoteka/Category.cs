@@ -8,10 +8,8 @@ namespace Filmoteka
     {
         public int CategoryId { get; set; }
         public string Name { get; set; }
-        public virtual ICollection<Film>
-            Films
-        { get; private set; } =
-            new ObservableCollection<Film>();
+        public virtual ICollection<Film> Films
+        { get; private set; } = new ObservableCollection<Film>();
 
     }
 }
