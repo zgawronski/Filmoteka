@@ -35,7 +35,9 @@
                             IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding FilmId}" Header="Film Id" 
                             Width="SizeToHeader" IsReadOnly="True"/>
-                <DataGridTextColumn Binding="{Binding Title}" Header="Title" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Title}" Header="Title" Width="100"/>
+                <DataGridTextColumn Binding="{Binding Actors}" Header="Actors" Width="100"/>
+                
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="Save" HorizontalAlignment="Center" Margin="0,240,0,0" 
