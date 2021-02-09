@@ -6,6 +6,7 @@ namespace Filmoteka
     {
         public DbSet<Film> Films { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Years> Years { get; set; }
 
         protected override void OnConfiguring( DbContextOptionsBuilder optionsBuilder)
         {

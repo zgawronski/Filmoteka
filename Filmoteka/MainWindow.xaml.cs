@@ -44,6 +44,7 @@ namespace Filmoteka
             // this forces the grid to refresh to latest values
             categoryDataGrid.Items.Refresh();
             filmsDataGrid.Items.Refresh();
+            yearsDataGrid.Items.Refresh();
         }
 
         protected override void OnClosing(CancelEventArgs e)
