@@ -6,7 +6,7 @@ namespace Filmoteka
 {
     public class Actor
     {
-        public int ActorId { get; set; }
+        public int Id { get; set; }
         public string Actors { get; set; }
 
         public int CategoryId { get; set; }

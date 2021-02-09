@@ -12,12 +12,14 @@
                               Source="{Binding Films, Source={StaticResource categoryViewSource}}"/>
         <CollectionViewSource x:Key="categoryYearsViewSource"
                               Source="{Binding Years, Source={StaticResource categoryViewSource}}"/>
+        <CollectionViewSource x:Key="categoryActorsViewSource"
+                              Source="{Binding Actors, Source={StaticResource categoryViewSource}}"/>
     </Window.Resources>
     <Grid>
         <DataGrid x:Name="categoryDataGrid" AutoGenerateColumns="False" 
           EnableRowVirtualization="True" 
           ItemsSource="{Binding Source={StaticResource categoryViewSource}}" 
-          Margin="628,13,22,229" RowDetailsVisibilityMode="VisibleWhenSelected">
+          Margin="41,13,609,229" RowDetailsVisibilityMode="VisibleWhenSelected">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Genre}" Header="Genre" 
                             Width="*" IsReadOnly="True"/>
@@ -26,27 +28,31 @@
         <DataGrid x:Name="filmsDataGrid" AutoGenerateColumns="False" 
           EnableRowVirtualization="True" 
           ItemsSource="{Binding Source={StaticResource categoryFilmsViewSource}}" 
-          Margin="24,13,249,229" RowDetailsVisibilityMode="VisibleWhenSelected" 
+          Margin="225,13,425,229" RowDetailsVisibilityMode="VisibleWhenSelected" 
           RenderTransformOrigin="0.488,0.251">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Title}" Header="Title" Width="Auto" IsReadOnly="True"/>
-                <DataGridTextColumn Binding="{Binding Genre}" 
-                            Header="Genre" Width="SizeToHeader"
-                            IsReadOnly="True"/>
-                <DataGridTextColumn Binding="{Binding Year}" Header="Year" 
-                            Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Title}" Header="Title" Width="*" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
         <DataGrid x:Name="yearsDataGrid" AutoGenerateColumns="False" 
           EnableRowVirtualization="True" 
           ItemsSource="{Binding Source={StaticResource categoryYearsViewSource}}" 
-          Margin="628,217,22,25" RowDetailsVisibilityMode="VisibleWhenSelected">
+          Margin="598,13,52,229" RowDetailsVisibilityMode="VisibleWhenSelected">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Year}" Header="Year" 
                             Width="*" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Save" HorizontalAlignment="Center" Margin="0,240,0,0" 
+        <DataGrid x:Name="actorsDataGrid" AutoGenerateColumns="False" 
+          EnableRowVirtualization="True" 
+          ItemsSource="{Binding Source={StaticResource categoryActorsViewSource}}" 
+          Margin="418,13,232,229" RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Actors}" Header="Actors" 
+                            Width="*" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Save" HorizontalAlignment="Left" Margin="24,394,0,20" 
         Click="Button_Click" Height="20" Width="123"/>
     </Grid>
 </Window>

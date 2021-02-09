@@ -9,10 +9,8 @@ namespace Filmoteka
 {
     public class Film
     {
-        public int FilmId { get; set; }
+        public int Id { get; set; }
         public string Title { get; set; }
-        public int Year { get; set; }
-        public string Genre { get; set; }
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }
     }

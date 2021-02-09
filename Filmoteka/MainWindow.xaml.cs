@@ -45,6 +45,7 @@ namespace Filmoteka
             categoryDataGrid.Items.Refresh();
             filmsDataGrid.Items.Refresh();
             yearsDataGrid.Items.Refresh();
+            actorsDataGrid.Items.Refresh();
         }
 
         protected override void OnClosing(CancelEventArgs e)
