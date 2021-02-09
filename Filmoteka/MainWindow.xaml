@@ -19,11 +19,8 @@
           ItemsSource="{Binding Source={StaticResource categoryViewSource}}" 
           Margin="628,13,22,229" RowDetailsVisibilityMode="VisibleWhenSelected">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding CategoryId}"
-                            Header="Id" Width="SizeToHeader"
-                            IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding Genre}" Header="Genre" 
-                            Width="*"/>
+                            Width="*" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
         <DataGrid x:Name="filmsDataGrid" AutoGenerateColumns="False" 
@@ -32,14 +29,12 @@
           Margin="24,13,249,229" RowDetailsVisibilityMode="VisibleWhenSelected" 
           RenderTransformOrigin="0.488,0.251">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding FilmId}" Header="Film Id" 
-                            Width="SizeToHeader" IsReadOnly="True"/>
-                <DataGridTextColumn Binding="{Binding Title}" Header="Title" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding Title}" Header="Title" Width="Auto" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding Genre}" 
                             Header="Genre" Width="SizeToHeader"
                             IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding Year}" Header="Year" 
-                            Width="*"/>
+                            Width="*" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
         <DataGrid x:Name="yearsDataGrid" AutoGenerateColumns="False" 
@@ -47,11 +42,8 @@
           ItemsSource="{Binding Source={StaticResource categoryYearsViewSource}}" 
           Margin="628,217,22,25" RowDetailsVisibilityMode="VisibleWhenSelected">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Id}"
-                            Header="Id" Width="SizeToHeader"
-                            IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding Year}" Header="Year" 
-                            Width="*"/>
+                            Width="*" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="Save" HorizontalAlignment="Center" Margin="0,240,0,0" 
