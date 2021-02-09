@@ -1,0 +1,59 @@
+﻿<Window x:Class="Filmoteka.FilmHome"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Filmoteka"
+        mc:Ignorable="d"
+        d:DesignHeight="450" d:DesignWidth="800"
+        Title="FilmHome" >
+    <Window.Resources>
+        <CollectionViewSource x:Key="categoryViewSource"/>
+        <CollectionViewSource x:Key="categoryFilmsViewSource" 
+                              Source="{Binding Films, Source={StaticResource categoryViewSource}}"/>
+        <CollectionViewSource x:Key="categoryYearsViewSource"
+                              Source="{Binding Years, Source={StaticResource categoryViewSource}}"/>
+        <CollectionViewSource x:Key="categoryActorsViewSource"
+                              Source="{Binding Actors, Source={StaticResource categoryViewSource}}"/>
+    </Window.Resources>
+    <Grid>
+        <DataGrid x:Name="categoryDataGrid" AutoGenerateColumns="False" 
+          EnableRowVirtualization="True" 
+          ItemsSource="{Binding Source={StaticResource categoryViewSource}}" 
+          Margin="40,20,600,200" RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Genre}" Header="Genre" 
+                            Width="*" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="filmsDataGrid" AutoGenerateColumns="False" 
+          EnableRowVirtualization="True" 
+          ItemsSource="{Binding Source={StaticResource categoryFilmsViewSource}}" 
+          Margin="225,20,400,200" RowDetailsVisibilityMode="VisibleWhenSelected" 
+          RenderTransformOrigin="0.488,0.251">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Title}" Header="Title" Width="*" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="yearsDataGrid" AutoGenerateColumns="False" 
+          EnableRowVirtualization="True" 
+          ItemsSource="{Binding Source={StaticResource categoryYearsViewSource}}" 
+          Margin="615,20,25,200" RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Year}" Header="Year" 
+                            Width="*" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="actorsDataGrid" AutoGenerateColumns="False" 
+          EnableRowVirtualization="True" 
+          ItemsSource="{Binding Source={StaticResource categoryActorsViewSource}}" 
+          Margin="415,20,225,200" RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Actors}" Header="Actors" 
+                            Width="*" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Save" HorizontalAlignment="Left" Margin="41,379,0,35" 
+        Click="Button_Click" Height="20" Width="707"/>
+    </Grid>
+</Window>

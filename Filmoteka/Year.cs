@@ -7,11 +7,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Filmoteka
 {
-    public class Years
+    public class Year
     {
         public int Id { get; set; }
-        public int Year { get; set; }
-        public int CategoryId { get; set; }
-        public virtual Category Category { get; set; }
+        public int YearProduction { get; set; }
+        public virtual ICollection<Film> Actors
+        { get; private set; } = new ObservableCollection<Film>();
     }
 }
