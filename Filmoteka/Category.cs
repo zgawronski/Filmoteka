@@ -14,6 +14,7 @@ namespace Filmoteka
         { get; private set; } = new ObservableCollection<Film>();
         public virtual ICollection<Years> Years
         { get; private set; } = new ObservableCollection<Years>();
-
+        public virtual ICollection<Actor> Actors
+        { get; private set; } = new ObservableCollection<Actor>();
     }
 }
