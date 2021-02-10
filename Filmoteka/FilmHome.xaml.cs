@@ -20,35 +20,39 @@ namespace Filmoteka
 
         //private CollectionViewSource categoryViewSource;
         private readonly FilmContext filmContext;
+        
 
         public FilmHome(FilmContext filmContext)
         {
             InitializeComponent();
             this.filmContext = filmContext;
-            GetFilm();
+            /*GetFilm();
             GetActor();
             GetYear();
-            GetCategory();
+            GetCategory();*/
             //categoryViewSource =
              //   (CollectionViewSource)FindResource(nameof(categoryViewSource));
         }
-
+        /*
         private void GetFilm() => Film.Title = filmContext.Films.ToList();
         private void GetActor() => Actor.ActorName = filmContext.Actors.ToList();
         private void GetYear() => Year.YearProduction = filmContext.Years.ToList();
         private void GetCategory() => Category.Genre = filmContext.Categories.ToList();
+        */
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             // this is for demo purposes only, to make it easier
             // to get up and running
-            //filmContext.Database.EnsureCreated();
+            filmContext.Database.EnsureCreated();
 
             // load the entities into EF Core
-            //filmContext.Categories.Load();
+            filmContext.Films.Load();
+            filmContext.Actors.Load();
+            filmContext.Years.Load();
+            filmContext.Categories.Load();
 
             //// bind to the source
-            //categoryViewSource.Source =
-            //    filmContext.Categories.Local.ToObservableCollection();
+            filmContext.Films = filmContext.Films.Local.ToObservableCollection();
         }
         
 
