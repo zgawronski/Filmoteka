@@ -26,27 +26,30 @@ namespace Filmoteka
             InitializeComponent();
             this.filmContext = filmContext;
             GetFilm();
+            GetActor();
+            GetYear();
+            GetCategory();
             //categoryViewSource =
-            //    (CollectionViewSource)FindResource(nameof(categoryViewSource));
+             //   (CollectionViewSource)FindResource(nameof(categoryViewSource));
         }
 
-        private void GetFilm()
-        {
-            Film.categoryViewSource = filmContext.Films.ToList();
-        }
-        /* private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void GetFilm() => Film.Title = filmContext.Films.ToList();
+        private void GetActor() => Actor.ActorName = filmContext.Actors.ToList();
+        private void GetYear() => Year.YearProduction = filmContext.Years.ToList();
+        private void GetCategory() => Category.Genre = filmContext.Categories.ToList();
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             // this is for demo purposes only, to make it easier
             // to get up and running
-            _context.Database.EnsureCreated();
+            //filmContext.Database.EnsureCreated();
 
             // load the entities into EF Core
-            _context.Categories.Load();
+            //filmContext.Categories.Load();
 
-            // bind to the source
-            categoryViewSource.Source =
-                _context.Categories.Local.ToObservableCollection();
-        }*/
+            //// bind to the source
+            //categoryViewSource.Source =
+            //    filmContext.Categories.Local.ToObservableCollection();
+        }
         
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -64,8 +67,8 @@ namespace Filmoteka
 
         //protected override void OnClosing(CancelEventArgs e)
         //{
-        //    // clean up database connections
-        //    _context.Dispose();
+        //    clean up database connections
+        //    filmContext.Dispose();
         //    base.OnClosing(e);
         //}
     }
