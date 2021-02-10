@@ -1,9 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using System.ComponentModel;
-using System.Windows;
-using System.Windows.Data;
-using System.Windows.Navigation;
+﻿using System.Windows.Navigation;
 
 namespace Filmoteka
 {

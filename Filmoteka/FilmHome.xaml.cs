@@ -3,14 +3,14 @@ using Microsoft.EntityFrameworkCore;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Data;
-
+using System.Windows.Controls;
 
 namespace Filmoteka
 {
     /// <summary>
     /// Interaction logic for FilmHome.xaml
     /// </summary>
-    public partial class FilmHome : Window
+    public partial class FilmHome : Page
     {
     private readonly FilmContext _context =
             new FilmContext();
@@ -49,11 +49,11 @@ namespace Filmoteka
             actorsDataGrid.Items.Refresh();
         }
 
-        protected override void OnClosing(CancelEventArgs e)
-        {
-            // clean up database connections
-            _context.Dispose();
-            base.OnClosing(e);
-        }
+        //protected override void OnClosing(CancelEventArgs e)
+        //{
+        //    // clean up database connections
+        //    _context.Dispose();
+        //    base.OnClosing(e);
+        //}
     }
 }
