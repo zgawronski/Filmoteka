@@ -7,7 +7,7 @@ namespace Filmoteka
     {
         public int Id { get; set; }
         public int YearProduction { get; set; }
-        public virtual ICollection<Film> Actors
+        public virtual ICollection<Film> Films
         { get; private set; } = new ObservableCollection<Film>();
     }
 }
