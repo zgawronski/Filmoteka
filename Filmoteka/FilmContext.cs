@@ -2,7 +2,7 @@
 
 namespace Filmoteka
 {
-    class FilmContext : DbContext
+    public class FilmContext : DbContext
     {
         public DbSet<Film> Films { get; set; }
         public DbSet<Category> Categories { get; set; }
