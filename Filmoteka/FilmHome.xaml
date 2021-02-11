@@ -22,7 +22,14 @@
         <DataGrid x:Name="categoryDataGrid" AutoGenerateColumns="False" 
           EnableRowVirtualization="True" 
           ItemsSource="{Binding Source={StaticResource filmGenreContext}}" 
-          Margin="40,20,600,200" RowDetailsVisibilityMode="VisibleWhenSelected">
+          Margin="55,20,0,0" RowDetailsVisibilityMode="VisibleWhenSelected"
+          MinWidth="150" MinHeight="200" MaxWidth="150" MaxHeight="200" Height="200" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <DataGrid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </DataGrid.Background>
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Genre}" Header="Genre" 
                             Width="*" IsReadOnly="True"/>
@@ -31,8 +38,14 @@
         <DataGrid x:Name="filmsDataGrid" AutoGenerateColumns="False" 
           EnableRowVirtualization="True" 
           ItemsSource="{Binding Source={StaticResource filmContext}}" 
-          Margin="225,20,400,200" RowDetailsVisibilityMode="VisibleWhenSelected" 
-          RenderTransformOrigin="0.488,0.251">
+          Margin="235,20,0,0" RowDetailsVisibilityMode="VisibleWhenSelected" 
+          Height="200" VerticalAlignment="Top" Width="150" MinWidth="150" MinHeight="200" MaxWidth="150" MaxHeight="200" HorizontalAlignment="Left">
+            <DataGrid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </DataGrid.Background>
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Title}" Header="Title" Width="*" IsReadOnly="True"/>
             </DataGrid.Columns>
@@ -40,7 +53,14 @@
         <DataGrid x:Name="yearsDataGrid" AutoGenerateColumns="False" 
           EnableRowVirtualization="True" 
           ItemsSource="{Binding Source={StaticResource filmYearsContext}}" 
-          Margin="615,20,25,200" RowDetailsVisibilityMode="VisibleWhenSelected">
+          Margin="595,20,0,0" RowDetailsVisibilityMode="VisibleWhenSelected"
+          Height="200" VerticalAlignment="Top" Width="150" HorizontalAlignment="Left">
+            <DataGrid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </DataGrid.Background>
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Year}" Header="Year" 
                             Width="*" IsReadOnly="True"/>
@@ -49,13 +69,27 @@
         <DataGrid x:Name="actorsDataGrid" AutoGenerateColumns="False" 
           EnableRowVirtualization="True" 
           ItemsSource="{Binding Source={StaticResource filmActorsContext}}" 
-          Margin="415,20,225,200" RowDetailsVisibilityMode="VisibleWhenSelected">
+          Margin="415,20,0,0" RowDetailsVisibilityMode="VisibleWhenSelected"
+          Height="200" VerticalAlignment="Top" Width="150" HorizontalAlignment="Left">
+            <DataGrid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </DataGrid.Background>
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Actors}" Header="Actors" 
                             Width="*" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Add" HorizontalAlignment="Center" Margin="0,300,0,100" 
-        Click="Button_Click" Width="300"/>
+        <Button Content="Add" HorizontalAlignment="Center" 
+        Click="Button_Click" Width="200" VerticalAlignment="Top" Height="25" Margin="0,250,0,0" MaxWidth="200" MaxHeight="25" MinWidth="200" MinHeight="25">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
     </Grid>
 </Page>
