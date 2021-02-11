@@ -10,7 +10,7 @@
 
     <Page.Resources>
         <CollectionViewSource x:Key="filmContext"/>
-        <CollectionViewSource x:Key="filmNameContext" 
+        <CollectionViewSource x:Key="filmGenreContext" 
                               Source="{Binding Films, Source={StaticResource filmContext}}"/>
         <CollectionViewSource x:Key="filmYearsContext"
                               Source="{Binding Years, Source={StaticResource filmContext}}"/>
@@ -21,7 +21,7 @@
     <Grid>
         <DataGrid x:Name="categoryDataGrid" AutoGenerateColumns="False" 
           EnableRowVirtualization="True" 
-          ItemsSource="{Binding Source={StaticResource filmContext}}" 
+          ItemsSource="{Binding Source={StaticResource filmGenreContext}}" 
           Margin="40,20,600,200" RowDetailsVisibilityMode="VisibleWhenSelected">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Genre}" Header="Genre" 
@@ -30,7 +30,7 @@
         </DataGrid>
         <DataGrid x:Name="filmsDataGrid" AutoGenerateColumns="False" 
           EnableRowVirtualization="True" 
-          ItemsSource="{Binding Source={StaticResource filmNameContext}}" 
+          ItemsSource="{Binding Source={StaticResource filmContext}}" 
           Margin="225,20,400,200" RowDetailsVisibilityMode="VisibleWhenSelected" 
           RenderTransformOrigin="0.488,0.251">
             <DataGrid.Columns>
