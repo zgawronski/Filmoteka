@@ -7,5 +7,6 @@ namespace Filmoteka
     /// </summary>
     public partial class App : Application
     {
+
     }
 }

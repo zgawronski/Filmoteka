@@ -1,12 +1,13 @@
 ﻿<Page x:Class="Filmoteka.FilmHome"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Filmoteka"
-        mc:Ignorable="d"
-        d:DesignHeight="450" d:DesignWidth="800"
-        Title="FilmHome" >
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Filmoteka"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="FilmHome">
+
     <Page.Resources>
         <CollectionViewSource x:Key="filmContext"/>
         <CollectionViewSource x:Key="filmNameContext" 
@@ -16,6 +17,7 @@
         <CollectionViewSource x:Key="filmActorsContext"
                               Source="{Binding Actors, Source={StaticResource filmContext}}"/>
     </Page.Resources>
+
     <Grid>
         <DataGrid x:Name="categoryDataGrid" AutoGenerateColumns="False" 
           EnableRowVirtualization="True" 
