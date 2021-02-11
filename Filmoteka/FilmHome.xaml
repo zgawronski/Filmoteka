@@ -55,7 +55,7 @@
                             Width="*" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Add" HorizontalAlignment="Center" Margin="0,345,0,40" 
+        <Button Content="Add" HorizontalAlignment="Center" Margin="0,300,0,100" 
         Click="Button_Click" Width="300"/>
     </Grid>
 </Page>

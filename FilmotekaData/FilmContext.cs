@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Filmoteka
+namespace FilmotekaData
 {
     public class FilmContext : DbContext
     {

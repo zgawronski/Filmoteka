@@ -1,4 +1,4 @@
-﻿namespace Filmoteka
+﻿namespace FilmotekaData
 {
     public class Actor
     {

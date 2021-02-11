@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FilmotekaData;
 
 namespace Filmoteka
 {
@@ -31,6 +32,7 @@ namespace Filmoteka
             GetYear();
             GetCategory();
         }
+        public FilmHome() { }
         private void GetFilm() => filmsDataGrid.ItemsSource = filmContext.Films.ToList();
         private void GetActor() => actorsDataGrid.ItemsSource = filmContext.Actors.ToList();
         private void GetYear() => yearsDataGrid.ItemsSource = filmContext.Years.ToList();
