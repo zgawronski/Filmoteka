@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using FilmotekaData;
+using System.ComponentModel;
 
 namespace Filmoteka
 {
@@ -23,6 +24,12 @@ namespace Filmoteka
     public partial class FilmHome : Page
     {
         private readonly FilmContext filmContext;
+
+        Film newFilm = new Film();
+        Actor newActor = new Actor();
+        Year newYear = new Year();
+        Category newCategory = new Category();
+
         public FilmHome(FilmContext filmContext)
         {
             InitializeComponent();
@@ -31,8 +38,19 @@ namespace Filmoteka
             GetActor();
             GetYear();
             GetCategory();
+            //DisplayFilmList()
+
+
+
         }
         public FilmHome() { }
+
+        /* private void DisplayFilmList()
+        {
+            var film = from b in filmContext.Films select new { Id = b.Id, Title = b.Title };
+            FilmTitle.ItemSource = film.ToList();
+
+        } */
         private void GetFilm() => filmsDataGrid.ItemsSource = filmContext.Films.ToList();
         private void GetActor() => actorsDataGrid.ItemsSource = filmContext.Actors.ToList();
         private void GetYear() => yearsDataGrid.ItemsSource = filmContext.Years.ToList();
@@ -40,7 +58,6 @@ namespace Filmoteka
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            // this is for demo purposes only, to make it easier
             // to get up and running
             filmContext.Database.EnsureCreated();
 
@@ -51,19 +68,18 @@ namespace Filmoteka
             filmContext.Categories.Load();
 
         }
+        
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            // all changes are automatically tracked, including
-            // deletes!
-            // _context.SaveChanges();
-
             // this forces the grid to refresh to latest values
-            categoryDataGrid.Items.Refresh();
-            filmsDataGrid.Items.Refresh();
-            yearsDataGrid.Items.Refresh();
-            actorsDataGrid.Items.Refresh();
+             categoryDataGrid.Items.Refresh();
+             filmsDataGrid.Items.Refresh();
+             yearsDataGrid.Items.Refresh();
+             actorsDataGrid.Items.Refresh(); 
+           
         }
+       
 
     }
 }
