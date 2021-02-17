@@ -58,9 +58,6 @@ namespace Filmoteka
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            // to get up and running
-            filmContext.Database.EnsureCreated();
-
             //// load the entities into EF Core
             filmContext.Films.Load();
             filmContext.Actors.Load();

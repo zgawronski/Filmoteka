@@ -5,17 +5,21 @@ namespace FilmotekaData
 {
     public class FilmContext : DbContext
     {
+        public FilmContext(DbContextOptions<FilmContext>options) : base(options)
+        {
+            Database.EnsureCreated();
+        }
         public DbSet<Film> Films { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Year> Years { get; set; }
         public DbSet<Actor> Actors { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        /* protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite("Data Source=films.db");
             optionsBuilder.UseLazyLoadingProxies();
             base.OnConfiguring(optionsBuilder);
-        }
+        } */
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -37,8 +41,8 @@ namespace FilmotekaData
         {
             return new Actor[]
             {
-                new Actor {Id = 1, ActorName = "Kate Winslet"},
-                new Actor {Id = 2, ActorName = "Maciej Sztuhr"}
+                new Actor {Id = 1, ActorName = "Kate Winslet", FilmId = 1},
+                new Actor {Id = 2, ActorName = "Maciej Sztuhr", FilmId = 2}
             };
         }
 

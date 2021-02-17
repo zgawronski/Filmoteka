@@ -1,4 +1,7 @@
-﻿using System.Windows;
+﻿using FilmotekaData;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using System.Windows;
 
 namespace Filmoteka
 {
@@ -7,11 +10,22 @@ namespace Filmoteka
     /// </summary>
     public partial class App : Application
     {
-        /* protected override void OnStartup(StartupEventArgs e)
+        private ServiceProvider serviceProvider;
+
+        public App()
         {
-            FilmHome st = new FilmHome("");
-            st.Show(); 
-        } */
+            ServiceCollection services = new ServiceCollection();
+            services.AddDbContext<FilmContext>(option =>
+            {
+                option.UseSqlite("Data Source = Filmoteka.db");
+            });
+            services.AddSingleton<FilmHome>();
+
+            serviceProvider = services.BuildServiceProvider();
+        }
+
 
     }
+
 }
+
