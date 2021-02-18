@@ -5,7 +5,7 @@ namespace FilmotekaData
 {
     public class FilmContext : DbContext
     {
-        public FilmContext(DbContextOptions<FilmContext>options) : base(options)
+        public FilmContext(DbContextOptions<FilmContext> options) : base(options)
         {
             Database.EnsureCreated();
         }
@@ -24,6 +24,7 @@ namespace FilmotekaData
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Film>().HasData(GetFilm());
+            modelBuilder.Entity<Film>().HasMany(a => a.Actors).WithOne(f => f.Film);
             modelBuilder.Entity<Actor>().HasData(GetActor());
             modelBuilder.Entity<Year>().HasData(GetYear());
             modelBuilder.Entity<Category>().HasData(GetCategory());

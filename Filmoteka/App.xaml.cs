@@ -14,17 +14,18 @@ namespace Filmoteka
 
         public App()
         {
+
             ServiceCollection services = new ServiceCollection();
             services.AddDbContext<FilmContext>(option =>
             {
-                option.UseSqlite("Data Source = Filmoteka.db");
+                option.UseSqlite("Data Source = films.db");
+                option.UseLazyLoadingProxies();
             });
             services.AddSingleton<FilmHome>();
 
             serviceProvider = services.BuildServiceProvider();
         }
-
-
+        
     }
 
 }

@@ -8,22 +8,14 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="FilmHome">
 
-    <Page.Resources>
-        <CollectionViewSource x:Key="filmContext"/>
-        <CollectionViewSource x:Key="filmGenreContext" 
-                              Source="{Binding Films, Source={StaticResource filmContext}}"/>
-        <CollectionViewSource x:Key="filmYearsContext"
-                              Source="{Binding Years, Source={StaticResource filmContext}}"/>
-        <CollectionViewSource x:Key="filmActorsContext"
-                              Source="{Binding Actors, Source={StaticResource filmContext}}"/>
-    </Page.Resources>
+ 
 
     <Grid>
         <DataGrid x:Name="categoryDataGrid" AutoGenerateColumns="False" 
           EnableRowVirtualization="True" 
-          ItemsSource="{Binding Source={StaticResource filmGenreContext}}" 
-          Margin="55,20,0,0" RowDetailsVisibilityMode="VisibleWhenSelected"
-          MinWidth="150" MinHeight="200" MaxWidth="150" MaxHeight="200" Height="200" VerticalAlignment="Top" HorizontalAlignment="Left">
+         
+          Margin="70,20,0,0" RowDetailsVisibilityMode="VisibleWhenSelected"
+          MinWidth="165" MinHeight="200" MaxWidth="167" MaxHeight="200" Height="200" VerticalAlignment="Top" HorizontalAlignment="Left" Width="165">
             <DataGrid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
@@ -37,9 +29,9 @@
         </DataGrid>
         <DataGrid x:Name="filmsDataGrid" AutoGenerateColumns="False" 
           EnableRowVirtualization="True" 
-          ItemsSource="{Binding Source={StaticResource filmContext}}" 
+          
           Margin="235,20,0,0" RowDetailsVisibilityMode="VisibleWhenSelected" 
-          Height="200" VerticalAlignment="Top" Width="150" MinWidth="150" MinHeight="200" MaxWidth="150" MaxHeight="200" HorizontalAlignment="Left">
+          Height="200" VerticalAlignment="Top" Width="165" MinWidth="165" MinHeight="200" MaxWidth="167" MaxHeight="200" HorizontalAlignment="Left">
             <DataGrid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
@@ -52,9 +44,9 @@
         </DataGrid>
         <DataGrid x:Name="yearsDataGrid" AutoGenerateColumns="False" 
           EnableRowVirtualization="True" 
-          ItemsSource="{Binding Source={StaticResource filmYearsContext}}" 
-          Margin="595,20,0,0" RowDetailsVisibilityMode="VisibleWhenSelected"
-          Height="200" VerticalAlignment="Top" Width="150" HorizontalAlignment="Left">
+          
+          Margin="565,20,0,0" RowDetailsVisibilityMode="VisibleWhenSelected"
+          Height="200" VerticalAlignment="Top" Width="150" HorizontalAlignment="Left" MinWidth="165" MinHeight="200" MaxWidth="165" MaxHeight="200">
             <DataGrid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
@@ -68,9 +60,9 @@
         </DataGrid>
         <DataGrid x:Name="actorsDataGrid" AutoGenerateColumns="False" 
           EnableRowVirtualization="True" 
-          ItemsSource="{Binding Source={StaticResource filmActorsContext}}" 
-          Margin="415,20,0,0" RowDetailsVisibilityMode="VisibleWhenSelected"
-          Height="200" VerticalAlignment="Top" Width="150" HorizontalAlignment="Left">
+           
+          Margin="400,20,0,0" RowDetailsVisibilityMode="VisibleWhenSelected"
+          Height="200" VerticalAlignment="Top" Width="150" HorizontalAlignment="Left" MinWidth="165" MinHeight="200" MaxWidth="165" MaxHeight="200">
             <DataGrid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>

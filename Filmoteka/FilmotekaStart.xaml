@@ -9,14 +9,15 @@
       Title="FilmotekaStart">
 
     <Grid>
-        <!--<Button Content="Lets check" HorizontalAlignment="Center" 
-        Click="Button_Click" Width="200" VerticalAlignment="Top" Height="25" Margin="0,250,0,0" MaxWidth="200" MaxHeight="25" MinWidth="200" MinHeight="25">
+        <TextBlock Text="Do you like Movies?" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="32" Foreground="#FFC8C8C8" Margin="0,0,40,0" />
+        <Button Content="Lets check" HorizontalAlignment="Right" 
+        Click="Button_Click" Width="200" VerticalAlignment="Top" Height="25" Margin="0,250,70,0" MaxWidth="200" MaxHeight="25" MinWidth="200" MinHeight="25">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </Button.Background>
-        </Button>-->
+        </Button>
     </Grid>
 </Page>

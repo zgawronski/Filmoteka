@@ -1,7 +1,7 @@
 ﻿<NavigationWindow x:Class="Filmoteka.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Filmoteka" Height="450" Width="800" Source="FilmHome.xaml" MinWidth="800" MinHeight="450" MaxWidth="800" MaxHeight="450">
+        Title="Filmoteka" Height="450" Width="800" Source="FilmotekaStart.xaml" MinWidth="800" MinHeight="450" MaxWidth="800" MaxHeight="450">
     <NavigationWindow.Background>
         <ImageBrush ImageSource="/background.png" Stretch="Fill" TileMode="FlipX"/>
     </NavigationWindow.Background>

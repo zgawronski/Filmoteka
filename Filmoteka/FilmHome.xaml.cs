@@ -25,10 +25,10 @@ namespace Filmoteka
     {
         private readonly FilmContext filmContext;
 
-        Film newFilm = new Film();
+        /*Film newFilm = new Film();
         Actor newActor = new Actor();
         Year newYear = new Year();
-        Category newCategory = new Category();
+        Category newCategory = new Category();*/
 
         public FilmHome(FilmContext filmContext)
         {
@@ -38,19 +38,10 @@ namespace Filmoteka
             GetActor();
             GetYear();
             GetCategory();
-            //DisplayFilmList()
-
-
-
+            
         }
         public FilmHome() { }
 
-        /* private void DisplayFilmList()
-        {
-            var film = from b in filmContext.Films select new { Id = b.Id, Title = b.Title };
-            FilmTitle.ItemSource = film.ToList();
-
-        } */
         private void GetFilm() => filmsDataGrid.ItemsSource = filmContext.Films.Select(film => new { Id = film.Id, Title = film.Title }).ToList();
         private void GetActor() => actorsDataGrid.ItemsSource = filmContext.Actors.Select(actor => new { Id = actor.Id, ActorName = actor.ActorName}).ToList();
         private void GetYear() => yearsDataGrid.ItemsSource = filmContext.Years.Select(year => new { Id = year.Id, Title = year.YearProduction }).ToList();
@@ -69,12 +60,14 @@ namespace Filmoteka
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            Film title = new Film();
+
             // this forces the grid to refresh to latest values
-             categoryDataGrid.Items.Refresh();
-             filmsDataGrid.Items.Refresh();
-             yearsDataGrid.Items.Refresh();
-             actorsDataGrid.Items.Refresh(); 
-           
+            categoryDataGrid.Items.Refresh();
+            filmsDataGrid.Items.Refresh();
+            yearsDataGrid.Items.Refresh();
+            actorsDataGrid.Items.Refresh();
+
         }
        
 

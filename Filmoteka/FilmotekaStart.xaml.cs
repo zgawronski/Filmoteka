@@ -24,5 +24,21 @@ namespace Filmoteka
         {
             InitializeComponent();
         }
+
+        // ---< region : Button >---
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //FilmHome filmHome = this.FilmHome //new FilmHome();
+            //this.NavigationService.Navigate(filmHome);
+
+            // Create a pack URI
+            Uri filmHome = new Uri("FilmHome.xaml", UriKind.Relative);
+
+            // Get the navigation service that was used to
+            // navigate to this page, and navigate to
+            // AnotherPage.xaml
+            this.NavigationService.Navigate(filmHome);
+        }
+
     }
 }
