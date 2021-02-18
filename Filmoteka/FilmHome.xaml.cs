@@ -12,12 +12,13 @@ namespace Filmoteka
     public partial class FilmHome : Page
     {
         FilmContext filmContext;
-        
+
 
         public FilmHome(FilmContext filmContext)
         {
             InitializeComponent();
             this.filmContext = filmContext;
+            DataContext = this;
             GetFilm();
             GetActor();
             GetYear();
@@ -27,8 +28,8 @@ namespace Filmoteka
         public FilmHome() { }
 
         private void GetFilm() => filmsDataGrid.ItemsSource = filmContext.Films.Select(film => new { Id = film.Id, Title = film.Title }).ToList();
-        private void GetActor() => actorsDataGrid.ItemsSource = filmContext.Actors.Select(actor => new { Id = actor.Id, ActorName = actor.ActorName}).ToList();
-        private void GetYear() => yearsDataGrid.ItemsSource = filmContext.Years.Select(year => new { Id = year.Id, Title = year.YearProduction }).ToList();
+        private void GetActor() => actorsDataGrid.ItemsSource = filmContext.Actors.Select(actor => new { Id = actor.Id, Actor = actor.ActorName}).ToList();
+        private void GetYear() => yearsDataGrid.ItemsSource = filmContext.Years.Select(year => new { Id = year.Id, Year = year.YearProduction }).ToList();
         private void GetCategory() => categoryDataGrid.ItemsSource = filmContext.Categories.Select(genre => new { Id = genre.Id, Genre = genre.Genre }).ToList();
 
         private void Page_Loaded(object sender, RoutedEventArgs e)

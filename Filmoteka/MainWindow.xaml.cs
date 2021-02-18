@@ -11,22 +11,13 @@ namespace Filmoteka
     /// </summary>
     public partial class MainWindow : NavigationWindow
     {
-        private ServiceProvider serviceProvider;
+        private readonly FilmotekaStart filmotekaStart;
 
-        public MainWindow()
+        public MainWindow(FilmotekaStart filmotekaStart)
         {
             InitializeComponent();
-
-            ServiceCollection services = new ServiceCollection();
-            services.AddDbContext<FilmContext>(option =>
-            {
-                option.UseSqlite("Data Source = films.db");
-                option.UseLazyLoadingProxies();
-            });
-            services.AddSingleton<FilmHome>();
-
-            serviceProvider = services.BuildServiceProvider();
-
+            this.filmotekaStart = filmotekaStart;
+            this.Navigate(filmotekaStart);
         }
         
     }

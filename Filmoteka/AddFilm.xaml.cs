@@ -19,11 +19,10 @@ namespace Filmoteka
         {
             InitializeComponent();
             this.filmContext = filmContext;
-
+            DataContext = this;
             //AddNewFilm.DataContext = newFilm;
         }
-        public AddFilm() { }
-
+        
         private void AddItem(object s, RoutedEventArgs e)
         {
             filmContext.Films.Add(newFilm);
@@ -54,9 +53,9 @@ namespace Filmoteka
             }
         }
 
-        private void Save(object sender, RoutedEventArgs e)
-        {
-            filmContext.Films.Add(newFilm);
-        }
+        //private void Save(object sender, RoutedEventArgs e)
+        //{
+        //    filmContext.Films.Add(newFilm);
+        //}
     }
 }

@@ -7,25 +7,15 @@
         xmlns:FilmotekaData="clr-namespace:FilmotekaData;assembly=FilmotekaData" x:Class="Filmoteka.AddFilm"
         mc:Ignorable="d"
         Title="AddFilm" Height="450" Width="800" MinWidth="800" MinHeight="450" MaxWidth="800" MaxHeight="450" >
-    <Window.Resources>
-        <CollectionViewSource x:Key="filmContext" Source="{Binding Films}"/>
-        <CollectionViewSource x:Key="filmGenreContext" 
-                              Source="{Binding Categories, Source={StaticResource filmContext}}"/>
-        <CollectionViewSource x:Key="filmYearsContext"
-                              Source="{Binding Years, Source={StaticResource filmContext}}"/>
-        <CollectionViewSource x:Key="filmActorsContext"
-                              Source="{Binding Actors, Source={StaticResource filmContext}}"/>
-    </Window.Resources>
+
     <Window.Background>
         <ImageBrush ImageSource="/background.png" Stretch="Fill"/>
     </Window.Background>
-    <Grid>
+    <Grid RenderTransformOrigin="0.484,0.578">
         <TextBox Text="Add new Film" x:Name="FilmAdder" FontSize="32" Width="200" Height="45" Panel.ZIndex="-1" Background="#FF252525" Foreground="#FFC8C8C8" Margin="0,20,20,0" HorizontalAlignment="Right" VerticalAlignment="Top"/>
 
-
-
         <Button Content="Add" HorizontalAlignment="Left" 
-        Click="Save" Width="200" VerticalAlignment="Top" Height="25" Margin="450,350,0,0" MaxWidth="200" MaxHeight="25" MinWidth="200" MinHeight="25">
+        Click="AddItem" Width="200" VerticalAlignment="Top" Height="25" Margin="450,350,0,0" MaxWidth="200" MaxHeight="25" MinWidth="200" MinHeight="25">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
@@ -34,11 +24,11 @@
             </Button.Background>
         </Button>
 
-        <TextBox HorizontalAlignment="Left" Margin="450,100,0,0" Text="{Binding Films}" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7">
+        <TextBox HorizontalAlignment="Left" Margin="450,100,0,0" Text="{Binding Film}" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7">
                    </TextBox>
-        <TextBox HorizontalAlignment="Left" Margin="450,160,0,0" Text="{Binding Categories}" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7"/>
-        <TextBox HorizontalAlignment="Left" Margin="450,220,0,0" Text="{Binding Actors}" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7"/>
-        <TextBox HorizontalAlignment="Left" Margin="450,280,0,0" Text="{Binding Years}" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7"/>
+        <ComboBox HorizontalAlignment="Left" Margin="450,160,0,0" Text="{Binding C}"  VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7"/>
+        <ComboBox HorizontalAlignment="Left" Margin="450,220,0,0" Text="{Binding Actors}" VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7"/>
+        <ComboBox HorizontalAlignment="Left" Margin="450,280,0,0" Text="{Binding Years}"  VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7"/>
     </Grid>
 
 </Window>

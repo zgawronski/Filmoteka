@@ -9,16 +9,20 @@ namespace Filmoteka
     /// </summary>
     public partial class FilmotekaStart : Page
     {
-        public FilmotekaStart()
+        private readonly FilmHome filmHome;
+
+        public FilmotekaStart(FilmHome filmHome)
         {
             InitializeComponent();
+            this.filmHome = filmHome;
         }
 
+        
         // ---< region : Button >---
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             // navigate to next page
-            Uri filmHome = new Uri("FilmHome.xaml", UriKind.Relative);
+            //Uri filmHome = new Uri("FilmHome.xaml", UriKind.Relative);
 
             // Get the navigation service that was used to
             // navigate to this page, and navigate to

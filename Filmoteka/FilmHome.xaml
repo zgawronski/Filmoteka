@@ -40,9 +40,7 @@
                 <DataGridTextColumn Binding="{Binding Title}" Header="Title" Width="*" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid x:Name="yearsDataGrid" AutoGenerateColumns="False" 
-          EnableRowVirtualization="True" 
-          
+        <DataGrid x:Name="yearsDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" 
           Margin="565,20,0,0" RowDetailsVisibilityMode="VisibleWhenSelected"
           Height="200" VerticalAlignment="Top" Width="150" HorizontalAlignment="Left" MinWidth="165" MinHeight="200" MaxWidth="165" MaxHeight="200">
             <DataGrid.Background>
@@ -52,13 +50,11 @@
                 </LinearGradientBrush>
             </DataGrid.Background>
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Year}" Header="Year" 
-                            Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Year}" Header="Year" Width="*" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
         <DataGrid x:Name="actorsDataGrid" AutoGenerateColumns="False" 
           EnableRowVirtualization="True" 
-           
           Margin="400,20,0,0" RowDetailsVisibilityMode="VisibleWhenSelected"
           Height="200" VerticalAlignment="Top" Width="150" HorizontalAlignment="Left" MinWidth="165" MinHeight="200" MaxWidth="165" MaxHeight="200">
             <DataGrid.Background>
@@ -68,7 +64,7 @@
                 </LinearGradientBrush>
             </DataGrid.Background>
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Actors}" Header="Actors" 
+                <DataGridTextColumn Binding="{Binding Actor}" Header="Actors" 
                             Width="*" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>

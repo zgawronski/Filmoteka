@@ -13,29 +13,23 @@ namespace FilmotekaData
         public DbSet<Category> Categories { get; set; }
         public DbSet<Year> Years { get; set; }
         public DbSet<Actor> Actors { get; set; }
-        
-        // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        // {
-        //    optionsBuilder.UseSqlite("Data Source=films.db");
-        //    optionsBuilder.UseLazyLoadingProxies();
-        //    base.OnConfiguring(optionsBuilder);
-        // } 
-        
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Film>().HasData(GetFilm());
-            modelBuilder.Entity<Film>().HasMany(a => a.Actors).WithOne(f => f.Film);
-            modelBuilder.Entity<Actor>().HasData(GetActor());
-            modelBuilder.Entity<Year>().HasData(GetYear());
-            modelBuilder.Entity<Category>().HasData(GetCategory());
-            base.OnModelCreating(modelBuilder);
+             modelBuilder.Entity<Category>().HasData(GetCategory());
+             modelBuilder.Entity<Year>().HasData(GetYear());
+             modelBuilder.Entity<Film>().HasData(GetFilm());
+             modelBuilder.Entity<Actor>().HasData(GetActor());
+             //modelBuilder.Entity<Film>().HasMany(a => a.Actors).WithOne(f => f.Film);
+             base.OnModelCreating(modelBuilder);
         }
         private Film[] GetFilm()
         {
             return new Film[]
             {
-                new Film {Id = 1, Title = "Titanic", CategoryId = 1},
-                new Film {Id = 2, Title = "Poranek Kojota", CategoryId = 2}
+                new Film {Id = 1, Title = "Titanic", CategoryId = 1, YearId = 1},
+                new Film {Id = 2, Title = "Poranek Kojota", CategoryId = 2, YearId = 2}
             };
         }
         private Actor[] GetActor()
