@@ -15,11 +15,11 @@ namespace FilmotekaData
         public DbSet<Actor> Actors { get; set; }
         
         // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
+        // {
         //    optionsBuilder.UseSqlite("Data Source=films.db");
         //    optionsBuilder.UseLazyLoadingProxies();
         //    base.OnConfiguring(optionsBuilder);
-        //} 
+        // } 
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

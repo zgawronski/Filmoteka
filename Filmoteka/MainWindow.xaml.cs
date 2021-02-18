@@ -16,6 +16,7 @@ namespace Filmoteka
         public MainWindow()
         {
             InitializeComponent();
+
             ServiceCollection services = new ServiceCollection();
             services.AddDbContext<FilmContext>(option =>
             {
