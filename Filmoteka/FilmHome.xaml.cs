@@ -25,8 +25,7 @@ namespace Filmoteka
             GetCategory();
 
         }
-        public FilmHome() { }
-
+        
         private void GetFilm() => filmsDataGrid.ItemsSource = filmContext.Films.Select(film => new { Id = film.Id, Title = film.Title }).ToList();
         private void GetActor() => actorsDataGrid.ItemsSource = filmContext.Actors.Select(actor => new { Id = actor.Id, Actor = actor.ActorName}).ToList();
         private void GetYear() => yearsDataGrid.ItemsSource = filmContext.Years.Select(year => new { Id = year.Id, Year = year.YearProduction }).ToList();

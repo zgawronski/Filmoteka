@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Linq;
+using System.Windows;
 using System.Windows.Controls;
 using FilmotekaData;
 
@@ -20,9 +21,15 @@ namespace Filmoteka
             InitializeComponent();
             this.filmContext = filmContext;
             DataContext = this;
-            //AddNewFilm.DataContext = newFilm;
+            //GetFilm();
+            GetActor();
+            GetYear();
+            GetCategory();
         }
-        
+        //private void GetFilm() => FilmTextBox.ItemsSource = filmContext.Films.Select(film => new { Id = film.Id, Title = film.Title }).ToList();
+        private void GetActor() => actorData.ItemsSource = filmContext.Actors.Select(actor => new {Actor = actor.ActorName }).ToList();
+        private void GetYear() => yearData.ItemsSource = filmContext.Years.Select(year => new {Year = year.YearProduction }).ToList();
+        private void GetCategory() => genreData.ItemsSource = filmContext.Categories.Select(genre => new {Genre = genre.Genre }).ToList();
         private void AddItem(object s, RoutedEventArgs e)
         {
             filmContext.Films.Add(newFilm);
@@ -35,27 +42,12 @@ namespace Filmoteka
             MessageBoxImage iconAdd = MessageBoxImage.Information;
             MessageBoxResult result = MessageBox.Show(messageAdd, captionAdd, buttonAdd, iconAdd);
 
-            //clearTextBox(AddNewFilm);
             newFilm = new Film();
-
-            //AddNewFilm.DataContext = newFilm;
+            
+            FilmTextBox.Text = string.Empty;
+            
 
             //RefreashViews();
         }
-        private void clearTextBox(Grid gridName)
-        {
-            foreach (Control txtBox in gridName.Children)
-            {
-                if (txtBox.GetType() == typeof(TextBox))
-                    ((TextBox)txtBox).Text = string.Empty;
-                if (txtBox.GetType() == typeof(PasswordBox))
-                    ((PasswordBox)txtBox).Password = string.Empty;
-            }
-        }
-
-        //private void Save(object sender, RoutedEventArgs e)
-        //{
-        //    filmContext.Films.Add(newFilm);
-        //}
     }
 }

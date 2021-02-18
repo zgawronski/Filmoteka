@@ -29,7 +29,7 @@ namespace FilmotekaData
             return new Film[]
             {
                 new Film {Id = 1, Title = "Titanic", CategoryId = 1, YearId = 1},
-                new Film {Id = 2, Title = "Poranek Kojota", CategoryId = 2, YearId = 2}
+                new Film {Id = 2, Title = "Poranek Kojota", CategoryId = 2, YearId = 5}
             };
         }
         private Actor[] GetActor()
@@ -46,7 +46,17 @@ namespace FilmotekaData
             return new Year[]
             {
                 new Year {Id = 1, YearProduction = 1997},
-                new Year {Id = 2, YearProduction = 2001}
+                new Year {Id = 2, YearProduction = 1998},
+                new Year {Id = 3, YearProduction = 1999},
+                new Year {Id = 4, YearProduction = 2000},
+                new Year {Id = 5, YearProduction = 2001},
+                new Year {Id = 6, YearProduction = 2002},
+                new Year {Id = 7, YearProduction = 2003},
+                new Year {Id = 8, YearProduction = 2004},
+                new Year {Id = 9, YearProduction = 2005},
+                new Year {Id = 10, YearProduction = 2006},
+                new Year {Id = 11, YearProduction = 2007},
+                new Year {Id = 12, YearProduction = 2008},
             };
         }
         private Category[] GetCategory()
@@ -54,7 +64,9 @@ namespace FilmotekaData
             return new Category[]
             {
                 new Category {Id = 1, Genre = "Romance"},
-                new Category {Id = 2, Genre = "Comedy"}
+                new Category {Id = 2, Genre = "Comedy"},
+                new Category {Id = 3, Genre = "Drama"},
+                new Category {Id = 4, Genre = "Sci-Fi"}
             };
         }
     }
