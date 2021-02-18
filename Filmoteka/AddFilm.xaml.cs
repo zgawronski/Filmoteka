@@ -22,7 +22,7 @@ namespace Filmoteka
     /// </summary>
     public partial class AddFilm : Window
     {
-        private readonly FilmContext filmContext;
+        FilmContext filmContext;
         Film newFilm = new Film();
         Actor newActor = new Actor();
         Year newYear = new Year();
@@ -32,6 +32,8 @@ namespace Filmoteka
         {
             InitializeComponent();
             this.filmContext = filmContext;
+
+            //AddNewFilm.DataContext = newFilm;
         }
         public AddFilm() { }
 
@@ -47,10 +49,10 @@ namespace Filmoteka
             MessageBoxImage iconAdd = MessageBoxImage.Information;
             MessageBoxResult result = MessageBox.Show(messageAdd, captionAdd, buttonAdd, iconAdd);
 
-            /*clearTextBox(AddNewFilm);
+            //clearTextBox(AddNewFilm);
             newFilm = new Film();
 
-            AddNewFilm.DataContext = newFilm;*/
+            //AddNewFilm.DataContext = newFilm;
 
             //RefreashViews();
         }

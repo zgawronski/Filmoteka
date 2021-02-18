@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using FilmotekaData;
 using System.ComponentModel;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Filmoteka
 {
@@ -23,9 +24,8 @@ namespace Filmoteka
     /// </summary>
     public partial class FilmHome : Page
     {
-        private readonly FilmContext filmContext;
-
-       
+        FilmContext filmContext;
+        
 
         public FilmHome(FilmContext filmContext)
         {
@@ -35,7 +35,7 @@ namespace Filmoteka
             GetActor();
             GetYear();
             GetCategory();
-            
+
         }
         public FilmHome() { }
 
