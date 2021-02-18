@@ -28,10 +28,7 @@ namespace Filmoteka
         // ---< region : Button >---
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //FilmHome filmHome = this.FilmHome //new FilmHome();
-            //this.NavigationService.Navigate(filmHome);
-
-            // Create a pack URI
+            // navigate to next page
             Uri filmHome = new Uri("FilmHome.xaml", UriKind.Relative);
 
             // Get the navigation service that was used to

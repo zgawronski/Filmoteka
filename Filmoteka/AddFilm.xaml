@@ -1,0 +1,41 @@
+﻿<Window x:Class="Filmoteka.AddFilm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Filmoteka"
+        mc:Ignorable="d"
+        Title="AddFilm" Height="450" Width="800" MinWidth="800" MinHeight="450" MaxWidth="800" MaxHeight="450" >
+<Window.Background>
+    <ImageBrush ImageSource="/background.png" Stretch="Fill"/>
+</Window.Background>
+<Window.Resources>
+    <CollectionViewSource x:Key="filmContext"/>
+    <CollectionViewSource x:Key="filmGenreContext" 
+                              Source="{Binding Films, Source={StaticResource filmContext}}"/>
+    <CollectionViewSource x:Key="filmYearsContext"
+                              Source="{Binding Years, Source={StaticResource filmContext}}"/>
+    <CollectionViewSource x:Key="filmActorsContext"
+                              Source="{Binding Actors, Source={StaticResource filmContext}}"/>
+</Window.Resources>
+<Grid>
+    <TextBox Text="Add new Film" x:Name="FilmAdder" FontSize="32" Width="200" Height="45" Panel.ZIndex="-1" Background="#FF252525" Foreground="#FFC8C8C8" Margin="0,20,20,0" HorizontalAlignment="Right" VerticalAlignment="Top"></TextBox>
+
+
+
+    <Button Content="Add" HorizontalAlignment="Left" 
+        Click="Save" Width="200" VerticalAlignment="Top" Height="25" Margin="450,350,0,0" MaxWidth="200" MaxHeight="25" MinWidth="200" MinHeight="25">
+        <Button.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+        </Button.Background>
+    </Button>
+    <TextBox HorizontalAlignment="Left" Margin="450,100,0,0" Text="Title" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7"/>
+    <TextBox HorizontalAlignment="Left" Margin="450,160,0,0" Text="Genre" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7"/>
+    <TextBox HorizontalAlignment="Left" Margin="450,220,0,0" Text="Actor Name" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7"/>
+    <TextBox HorizontalAlignment="Left" Margin="450,280,0,0" Text="Year of Production" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7"/>
+</Grid>
+
+</Window>

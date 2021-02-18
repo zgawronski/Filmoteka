@@ -25,10 +25,7 @@ namespace Filmoteka
     {
         private readonly FilmContext filmContext;
 
-        /*Film newFilm = new Film();
-        Actor newActor = new Actor();
-        Year newYear = new Year();
-        Category newCategory = new Category();*/
+       
 
         public FilmHome(FilmContext filmContext)
         {
@@ -57,16 +54,18 @@ namespace Filmoteka
 
         }
         
+        // open AddFilm Window
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void FilmAdd(object sender, RoutedEventArgs e)
         {
-            Film title = new Film();
-
             // this forces the grid to refresh to latest values
-            categoryDataGrid.Items.Refresh();
+            /*categoryDataGrid.Items.Refresh();
             filmsDataGrid.Items.Refresh();
             yearsDataGrid.Items.Refresh();
             actorsDataGrid.Items.Refresh();
+            */
+            AddFilm addFilm = new AddFilm(filmContext);
+            addFilm.Show();
 
         }
        
