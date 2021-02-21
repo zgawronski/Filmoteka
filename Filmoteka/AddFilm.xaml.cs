@@ -10,7 +10,7 @@ namespace Filmoteka
     /// </summary>
     public partial class AddFilm : Window
     {
-        FilmContext filmContext;
+        FilmContext filmContext { get; set; }
         Film newFilm = new Film();
         
         public AddFilm(FilmContext filmContext)
@@ -18,26 +18,43 @@ namespace Filmoteka
             InitializeComponent();
             this.filmContext = filmContext;
             DataContext = this;
-            //GetFilm();
-            GetActor();
-            GetYear();
             GetCategory();
+            GetFilm();
+            GetYear();
+            GetActor();
 
         }
-        //private void GetFilm() => FilmTextBox.ItemsSource = filmContext.Films.Select(film => new { Id = film.Id, Title = film.Title }).ToList();
-        private void GetActor() => actorData.ItemsSource = filmContext.Actors.Select(a => new { a.ActorName }).ToList();
-        private void GetYear() => yearData.ItemsSource = filmContext.Years.Select(y => new { y.YearProduction }).ToList();
-        private void GetCategory() => genreData.ItemsSource = filmContext.Categories.Select(g => new { g.Genre }).ToList();
+        private void GetCategory() => genreData.ItemsSource = filmContext.Categories.Select(g => new { g.Id, Genre = g.Genre }).ToList();
+        private void GetFilm() => filmContext.Films.Select(f => new { Id = f.Id, Title = f.Title == FilmTextBox.Text }).ToList();
+        private void GetYear() => yearData.ItemsSource = filmContext.Years.Select(y => new { y.Id, Year = y.YearProduction }).ToList();
+        private void GetActor() => actorData.ItemsSource = filmContext.Actors.Select(a => new { a.Id, Actor = a.ActorName }).ToList();
 
 
         private void PlusFilm(object s, RoutedEventArgs e)
         {
-            filmContext.Films.Add(newFilm);
-            filmContext.SaveChanges();
+            if (newFilm.Title != null && newFilm.Actor != null && newFilm.Category != null && newFilm.Year != null)
+            {
+                filmContext.Films.Add(newFilm);
+                filmContext.SaveChanges();
+                string mAdd = "Add new Film: \n" + "Title: " + newFilm.Title + ", Genre: " + newFilm.Category + ", Actor: " + newFilm.Actor + ", Year of Production: " + newFilm.Actor;
+                string cAdd = "Incorrect data!";
+                MessageBoxButton message = MessageBoxButton.OK;
+                MessageBoxImage messageBox = MessageBoxImage.Information;
+                MessageBoxResult result = MessageBox.Show(mAdd, cAdd, message, messageBox);
+                newFilm = new Film();
+
+                FilmTextBox.Text = string.Empty;
+            }
+            else
+            {
+                string mAdd = "Please provide all details";
+                string cAdd = "Incorrect data!";
+                MessageBoxButton message = MessageBoxButton.OK;
+                MessageBoxImage messageBox = MessageBoxImage.Information;
+                MessageBoxResult result = MessageBox.Show(mAdd, cAdd, message, messageBox);
+            }
          
-            newFilm = new Film();
-                      
-            FilmTextBox.Text = string.Empty;
+            
             
         }
     }

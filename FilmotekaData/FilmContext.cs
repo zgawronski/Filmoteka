@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-
+using System.Collections.Generic;
 
 namespace FilmotekaData
 {
@@ -21,23 +21,24 @@ namespace FilmotekaData
              modelBuilder.Entity<Year>().HasData(GetYear());
              modelBuilder.Entity<Film>().HasData(GetFilm());
              modelBuilder.Entity<Actor>().HasData(GetActor());
-             //modelBuilder.Entity<Film>().HasMany(a => a.Actors).WithOne(f => f.Film);
+             
              base.OnModelCreating(modelBuilder);
         }
         private static Film[] GetFilm()
         {
             return new Film[]
             {
-                new Film {Id = 1, Title = "Titanic", CategoryId = 1, YearId = 1},
-                new Film {Id = 2, Title = "Poranek Kojota", CategoryId = 2, YearId = 5}
+                new Film { Id = 1, Title = "Titanic", CategoryId = 1, YearId = 1, ActorId = 1 },
+                new Film { Id = 2, Title = "Poranek Kojota", CategoryId = 2, YearId = 5, ActorId =2 }
             };
         }
         private static Actor[] GetActor()
         {
             return new Actor[]
             {
-                new Actor {Id = 1, ActorName = "Kate Winslet", FilmId = 1},
-                new Actor {Id = 2, ActorName = "Maciej Stuhr", FilmId = 2}
+                new Actor { Id = 1, ActorName = "Kate Winslet" },
+                new Actor { Id = 2, ActorName = "Maciej Stuhr" }
+                
             };
         }
 

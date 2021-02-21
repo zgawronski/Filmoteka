@@ -25,10 +25,10 @@
         </Button>
 
         <TextBox x:Name="FilmTextBox" HorizontalAlignment="Left" Margin="450,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7">
-                   </TextBox>
-        <ComboBox x:Name="genreData" HorizontalAlignment="Left" Margin="450,160,0,0" SelectedValuePath="{Binding Genre}"  VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7"/>
-        <ComboBox x:Name="actorData" HorizontalAlignment="Left" Margin="450,220,0,0" SelectedValuePath="{Binding Actor}" VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7"/>
-        <ComboBox x:Name="yearData" HorizontalAlignment="Left" Margin="450,280,0,0" SelectedValuePath="{Binding Year}"  VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7"/>
+                    </TextBox>
+        <ComboBox x:Name="genreData" HorizontalAlignment="Left" Margin="450,160,0,0" ItemsSource="{Binding Genre}"  VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7"/>
+        <ComboBox x:Name="actorData" HorizontalAlignment="Left" Margin="450,220,0,0" ItemsSource="{Binding Actor}" VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7"/>
+        <ComboBox x:Name="yearData" HorizontalAlignment="Left" Margin="450,280,0,0" ItemsSource="{Binding Year}"  VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7"/>
     </Grid>
 
 </Window>
