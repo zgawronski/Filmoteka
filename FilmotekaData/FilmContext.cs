@@ -24,7 +24,7 @@ namespace FilmotekaData
              //modelBuilder.Entity<Film>().HasMany(a => a.Actors).WithOne(f => f.Film);
              base.OnModelCreating(modelBuilder);
         }
-        private Film[] GetFilm()
+        private static Film[] GetFilm()
         {
             return new Film[]
             {
@@ -32,16 +32,16 @@ namespace FilmotekaData
                 new Film {Id = 2, Title = "Poranek Kojota", CategoryId = 2, YearId = 5}
             };
         }
-        private Actor[] GetActor()
+        private static Actor[] GetActor()
         {
             return new Actor[]
             {
                 new Actor {Id = 1, ActorName = "Kate Winslet", FilmId = 1},
-                new Actor {Id = 2, ActorName = "Maciej Sztuhr", FilmId = 2}
+                new Actor {Id = 2, ActorName = "Maciej Stuhr", FilmId = 2}
             };
         }
 
-        private Year[] GetYear()
+        private static Year[] GetYear()
         {
             return new Year[]
             {
@@ -59,7 +59,7 @@ namespace FilmotekaData
                 new Year {Id = 12, YearProduction = 2008},
             };
         }
-        private Category[] GetCategory()
+        private static Category[] GetCategory()
         {
             return new Category[]
             {

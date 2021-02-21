@@ -9,27 +9,10 @@
       Title="FilmHome">
 
     <Grid>
-        <DataGrid x:Name="categoryDataGrid" AutoGenerateColumns="False" 
-          EnableRowVirtualization="True" 
-         
-          Margin="70,20,0,0" RowDetailsVisibilityMode="VisibleWhenSelected"
-          MinWidth="165" MinHeight="200" MaxWidth="167" MaxHeight="200" Height="200" VerticalAlignment="Top" HorizontalAlignment="Left" Width="165">
-            <DataGrid.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </DataGrid.Background>
-            <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Genre}" Header="Genre" 
-                            Width="*" IsReadOnly="True"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <DataGrid x:Name="filmsDataGrid" AutoGenerateColumns="False" 
-          EnableRowVirtualization="True" 
-          
-          Margin="235,20,0,0" RowDetailsVisibilityMode="VisibleWhenSelected" 
-          Height="200" VerticalAlignment="Top" Width="165" MinWidth="165" MinHeight="200" MaxWidth="167" MaxHeight="200" HorizontalAlignment="Left">
+        <DataGrid x:Name="filmGrid" AutoGenerateColumns="False" 
+            EnableRowVirtualization="True" 
+            Margin="70,20,0,0" RowDetailsVisibilityMode="VisibleWhenSelected" 
+            Height="199" VerticalAlignment="Top" Width="660" MinWidth="660" MinHeight="200" MaxWidth="660" MaxHeight="200" HorizontalAlignment="Left">
             <DataGrid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
@@ -38,36 +21,12 @@
             </DataGrid.Background>
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Title}" Header="Title" Width="*" IsReadOnly="True"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <DataGrid x:Name="yearsDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" 
-          Margin="565,20,0,0" RowDetailsVisibilityMode="VisibleWhenSelected"
-          Height="200" VerticalAlignment="Top" Width="150" HorizontalAlignment="Left" MinWidth="165" MinHeight="200" MaxWidth="165" MaxHeight="200">
-            <DataGrid.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </DataGrid.Background>
-            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Category}" Header="Category" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Actors}" Header="Actor" Width="*" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding Year}" Header="Year" Width="*" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid x:Name="actorsDataGrid" AutoGenerateColumns="False" 
-          EnableRowVirtualization="True" 
-          Margin="400,20,0,0" RowDetailsVisibilityMode="VisibleWhenSelected"
-          Height="200" VerticalAlignment="Top" Width="150" HorizontalAlignment="Left" MinWidth="165" MinHeight="200" MaxWidth="165" MaxHeight="200">
-            <DataGrid.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </DataGrid.Background>
-            <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Actor}" Header="Actors" 
-                            Width="*" IsReadOnly="True"/>
-            </DataGrid.Columns>
-        </DataGrid>
+        
         <Button Content="Add" HorizontalAlignment="Center" 
         Click="FilmAdd" Width="200" VerticalAlignment="Top" Height="25" Margin="0,250,0,0" MaxWidth="200" MaxHeight="25" MinWidth="200" MinHeight="25">
             <Button.Background>

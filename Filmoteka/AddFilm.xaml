@@ -15,7 +15,7 @@
         <TextBox Text="Add new Film" x:Name="FilmAdder" FontSize="32" Width="200" Height="45" Panel.ZIndex="-1" Background="#FF252525" Foreground="#FFC8C8C8" Margin="0,20,20,0" HorizontalAlignment="Right" VerticalAlignment="Top"/>
 
         <Button Content="Add" HorizontalAlignment="Left" 
-        Click="AddItem" Width="200" VerticalAlignment="Top" Height="25" Margin="450,350,0,0" MaxWidth="200" MaxHeight="25" MinWidth="200" MinHeight="25">
+        Click="PlusFilm" Width="200" VerticalAlignment="Top" Height="25" Margin="450,350,0,0" MaxWidth="200" MaxHeight="25" MinWidth="200" MinHeight="25">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
@@ -26,9 +26,9 @@
 
         <TextBox x:Name="FilmTextBox" HorizontalAlignment="Left" Margin="450,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7">
                    </TextBox>
-        <ComboBox x:Name="genreData" HorizontalAlignment="Left" Margin="450,160,0,0" Text="{Binding Genre}"  VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7"/>
-        <ComboBox x:Name="actorData" HorizontalAlignment="Left" Margin="450,220,0,0" Text="{Binding Actor}" VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7"/>
-        <ComboBox x:Name="yearData" HorizontalAlignment="Left" Margin="450,280,0,0" Text="{Binding Year}"  VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7"/>
+        <ComboBox x:Name="genreData" HorizontalAlignment="Left" Margin="450,160,0,0" SelectedValuePath="{Binding Genre}"  VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7"/>
+        <ComboBox x:Name="actorData" HorizontalAlignment="Left" Margin="450,220,0,0" SelectedValuePath="{Binding Actor}" VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7"/>
+        <ComboBox x:Name="yearData" HorizontalAlignment="Left" Margin="450,280,0,0" SelectedValuePath="{Binding Year}"  VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7"/>
     </Grid>
 
 </Window>
