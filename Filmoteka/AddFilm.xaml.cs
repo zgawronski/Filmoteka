@@ -25,8 +25,8 @@ namespace Filmoteka
 
         }
         private void GetCategory() => genreData.ItemsSource = filmContext.Categories.Select(g => new { g.Id, Genre = g.Genre }).ToList();
-        private void GetFilm() => filmContext.Films.Select(f => new { Id = f.Id, Title = f.Title == FilmTextBox.Text }).ToList();
-        private void GetYear() => yearData.ItemsSource = filmContext.Years.Select(y => new { y.Id, Year = y.YearProduction }).ToList();
+        private void GetFilm() => filmContext.Films.Select(f => new { Id = f.Id, Title = f.Title }).ToList();
+        private void GetYear() => yearData.ItemsSource = filmContext.Years.Select(y => new { YearId = y.Id, Year = y.YearProduction }).ToList();
         private void GetActor() => actorData.ItemsSource = filmContext.Actors.Select(a => new { a.Id, Actor = a.ActorName }).ToList();
 
 
@@ -36,13 +36,13 @@ namespace Filmoteka
             {
                 filmContext.Films.Add(newFilm);
                 filmContext.SaveChanges();
-                string mAdd = "Add new Film: \n" + "Title: " + newFilm.Title + ", Genre: " + newFilm.Category + ", Actor: " + newFilm.Actor + ", Year of Production: " + newFilm.Actor;
+                string mAdd = "Add new Film: \n" + "Title: " + newFilm.Title + ", Genre: " + newFilm.Category + ", Year of Production: " + newFilm.Year + ", Actor: " + newFilm.Actor;
                 string cAdd = "Incorrect data!";
                 MessageBoxButton message = MessageBoxButton.OK;
                 MessageBoxImage messageBox = MessageBoxImage.Information;
                 MessageBoxResult result = MessageBox.Show(mAdd, cAdd, message, messageBox);
                 newFilm = new Film();
-
+                
                 FilmTextBox.Text = string.Empty;
             }
             else

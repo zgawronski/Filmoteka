@@ -20,16 +20,12 @@ namespace Filmoteka
             this.filmContext = filmContext;
             DataContext = this;
             GetFilm();
-            //GetActor();
-            //GetYear();
-            //GetCategory();
+            
 
         }
 
         private void GetFilm() => filmGrid.ItemsSource = filmContext.Films.Select(f => new { f.Id, f.Title, f.CategoryId, Category = f.Category.Genre, f.ActorId, Actors = f.Actor.ActorName, f.YearId, Year = f.Year.YearProduction }).ToList();
-        //private void GetActor() => actorsDataGrid.ItemsSource = filmContext.Actors.Select(actor => new { Id = actor.Id, Actor = actor.ActorName}).ToList();
-        //private void GetYear() => yearsDataGrid.ItemsSource = filmContext.Years.Select(year => new { Id = year.Id, Year = year.YearProduction }).ToList();
-        //private void GetCategory() => categoryDataGrid.ItemsSource = filmContext.Categories.Select(genre => new { Id = genre.Id, Genre = genre.Genre }).ToList();
+        
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
@@ -44,16 +40,9 @@ namespace Filmoteka
         // open AddFilm Window
 
         private void FilmAdd(object sender, RoutedEventArgs e)
-        {
-            // this forces the grid to refresh to latest values
-            //categoryDataGrid.Items.Refresh();
-            filmGrid.Items.Refresh();
-            //yearsDataGrid.Items.Refresh();
-            //actorsDataGrid.Items.Refresh();
-            
+        {            
             AddFilm addFilm = new AddFilm(filmContext);
             addFilm.Show();
-
         }
        
 

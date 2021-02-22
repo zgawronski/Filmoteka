@@ -13,7 +13,6 @@ namespace FilmotekaData
         public virtual Year Year { get; set; }
         public int ActorId { get; set; }
         public virtual Actor Actor { get; set; }
-        //public virtual ICollection<Actor> Actors
-        //{ get; private set; } = new ObservableCollection<Actor>();
+        
     }
 }
