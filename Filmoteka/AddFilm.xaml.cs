@@ -25,14 +25,14 @@ namespace Filmoteka
 
         }
         private void GetCategory() => genreData.ItemsSource = filmContext.Categories.Select(g => new { g.Id, Genre = g.Genre }).ToList();
-        private void GetFilm() => filmContext.Films.Select(f => new { Id = f.Id, Title = f.Title == filmData.Text }).ToList();
+        private void GetFilm() => filmContext.Films.Select(f => new { Id = f.Id, Title = f.Title }).ToList();
         private void GetYear() => yearData.ItemsSource = filmContext.Years.Select(y => new { YearId = y.Id, Year = y.YearProduction }).ToList();
         private void GetActor() => actorData.ItemsSource = filmContext.Actors.Select(a => new { a.Id, Actor = a.ActorName }).ToList();
 
 
         private void PlusFilm(object s, RoutedEventArgs e)
         {
-            if (newFilm.Title != null && newFilm.Actor != null && newFilm.Category != null && newFilm.Year != null)
+            if (newFilm.Title != null && newFilm.ActorId != 0 && newFilm.CategoryId != 0 && newFilm.YearId != 0)
             {
                 filmContext.Films.Add(newFilm);
                 filmContext.SaveChanges();
