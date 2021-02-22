@@ -27,8 +27,7 @@
             </Button.Background>
         </Button>
         <Label Content="Title" HorizontalAlignment="Left" Margin="410,100,0,0" Foreground="#FFC8C8C8"/>
-        <UserControl Name="panel" DataContext="{Binding ElementName=panel}"/>
-        <TextBox x:Name="filmData" DataContext="{Binding ElementName=filmData}" Text="{Binding Text}" HorizontalAlignment="Left" Margin="450,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7"/>
+        <TextBox x:Name="filmData" Text="{Binding Path=Name}" HorizontalAlignment="Left" Margin="450,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7"/>
         
         <Label Content="Genre" HorizontalAlignment="Left" Margin="400,160,0,0" Foreground="#FFC8C8C8"/>
         <ComboBox x:Name="genreData" HorizontalAlignment="Left" Margin="450,160,0,0" ItemsSource="{Binding GenreId}" DisplayMemberPath="Genre" VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7"/>
