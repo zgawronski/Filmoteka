@@ -43,7 +43,7 @@ namespace Filmoteka
                 MessageBoxResult result = MessageBox.Show(mAdd, cAdd, message, messageBox);
                 newFilm = new Film();
                 
-                FilmTextBox.Text = string.Empty;
+                //filmData.Text = string.Empty;
             }
             else
             {
