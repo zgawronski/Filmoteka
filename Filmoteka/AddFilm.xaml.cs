@@ -15,6 +15,7 @@ namespace Filmoteka
     {
         FilmContext filmContext { get; set; }
         Film newFilm = new Film();
+        public event Action filmAddedEvent;
         
         public AddFilm(FilmContext filmContext)
         {
@@ -30,7 +31,7 @@ namespace Filmoteka
         private void GetYear() => yearData.ItemsSource = filmContext.Years.Select(y => new { y.Id, Year = y.YearProduction }).ToList();
         private void GetActor() => actorData.ItemsSource = filmContext.Actors.Select(a => new { a.Id, Actor = a.ActorName }).ToList();
 
-
+        
         private void PlusFilm(object s, RoutedEventArgs e)
         {
             newFilm.Title = filmData.Text;
@@ -65,6 +66,7 @@ namespace Filmoteka
                 MessageBoxResult result = MessageBox.Show(mAdd, cAdd, message, messageBox);
                 newFilm = new Film();
                 
+                filmAddedEvent?.Invoke();
                 this.Close();
             }
             else

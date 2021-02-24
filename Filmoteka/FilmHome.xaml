@@ -28,17 +28,8 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button Content="Add" HorizontalAlignment="Left" 
+        <Button Content="Add" HorizontalAlignment="Center" 
         Click="FilmAdd" Width="200" VerticalAlignment="Top" Height="25" Margin="70,250,0,0" MaxWidth="200" MaxHeight="25" MinWidth="200" MinHeight="25">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-        <Button Content="Refresh" HorizontalAlignment="Left" 
-            Click="Refresh" Width="200" VerticalAlignment="Top" Height="25" Margin="530,250,0,0" MaxWidth="200" MaxHeight="25" MinWidth="200" MinHeight="25">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>

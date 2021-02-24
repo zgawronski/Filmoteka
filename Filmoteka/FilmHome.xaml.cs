@@ -42,12 +42,14 @@ namespace Filmoteka
         private void FilmAdd(object sender, RoutedEventArgs e)
         {            
             AddFilm addFilm = new AddFilm(filmContext);
+            addFilm.filmAddedEvent += AddFilm_filmAddedEvent;
             addFilm.Show();
         }
 
-        private void Refresh(object sender, RoutedEventArgs e)
+        private void AddFilm_filmAddedEvent()
         {
             GetFilm();
         }
+
     }
 }
