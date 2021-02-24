@@ -43,14 +43,14 @@ namespace Filmoteka
                 filmContext.Films.Add(newFilm);
                 filmContext.SaveChanges();
 
-                string mAdd = "New FilmAdded \n";
+                string mAdd = "New Film Added \n";
                 string cAdd = "Incorrect data!";
                 MessageBoxButton message = MessageBoxButton.OK;
                 MessageBoxImage messageBox = MessageBoxImage.Information;
                 MessageBoxResult result = MessageBox.Show(mAdd, cAdd, message, messageBox);
                 newFilm = new Film();
-                
-                filmData.Text = string.Empty;
+
+                this.Close();
             }
             else
             {
