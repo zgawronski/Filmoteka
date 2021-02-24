@@ -37,8 +37,12 @@ namespace FilmotekaData
             return new Actor[]
             {
                 new Actor { Id = 1, ActorName = "Kate Winslet" },
-                new Actor { Id = 2, ActorName = "Maciej Stuhr" }
-                
+                new Actor { Id = 2, ActorName = "Maciej Stuhr" },
+                new Actor { Id = 3, ActorName = "Alojzy Bombel" },
+                new Actor { Id = 4, ActorName = "Jessica Biel" },
+                new Actor { Id = 5, ActorName = "Luici Calsone" },
+                new Actor { Id = 6, ActorName = "Zenek" },
+                new Actor { Id = 7, ActorName = "Nieznany" }
             };
         }
 

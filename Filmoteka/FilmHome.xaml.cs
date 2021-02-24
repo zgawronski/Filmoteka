@@ -3,7 +3,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using FilmotekaData;
-
+using System.Collections;
 namespace Filmoteka
 {
     /// <summary>
@@ -44,7 +44,10 @@ namespace Filmoteka
             AddFilm addFilm = new AddFilm(filmContext);
             addFilm.Show();
         }
-       
 
+        private void Refresh(object sender, RoutedEventArgs e)
+        {
+            GetFilm();
+        }
     }
 }
