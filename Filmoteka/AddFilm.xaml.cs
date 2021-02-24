@@ -5,67 +5,58 @@ using FilmotekaData;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace Filmoteka
 {
     /// <summary>
     /// Interaction logic for AddFilm.xaml
     /// </summary>
-    public partial class AddFilm : Window
+    public partial class AddFilm : Window, INotifyPropertyChanged
     {
         FilmContext filmContext { get; set; }
-        Film newFilm = new Film();
-        public event Action filmAddedEvent;
         
+        public event Action filmAddedEvent;
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public List<Category> Categories { get; set; } = new List<Category>();
+        public List<Year> Years { get; set; } = new List<Year>();
+        public List<Actor> Actors { get; set; } = new List<Actor>();
+
+
         public AddFilm(FilmContext filmContext)
         {
             InitializeComponent();
             this.filmContext = filmContext;
             DataContext = this;
-            GetCategory();
-            GetYear();
-            GetActor();
             
         }
-        private void GetCategory() => genreData.ItemsSource = filmContext.Categories.Select(g => new { g.Id, Genre = g.Genre }).ToList();
-        private void GetYear() => yearData.ItemsSource = filmContext.Years.Select(y => new { y.Id, Year = y.YearProduction }).ToList();
-        private void GetActor() => actorData.ItemsSource = filmContext.Actors.Select(a => new { a.Id, Actor = a.ActorName }).ToList();
+        
+
 
         
         private void PlusFilm(object s, RoutedEventArgs e)
         {
-            newFilm.Title = filmData.Text;
-            char[] c = { '{', 'I', 'd', '=', ' ' };
-            string item = genreData.SelectedItem.ToString();
 
-            string id = item.Split(',')[0];
-            int Id = Int32.Parse(id.Trim(c));
-
-            string item2 = yearData.SelectedItem.ToString();
-            string id2 = item2.Split(',')[0];
-
-            int Id2 = Int32.Parse(id2.Trim(c));
-            string item3 = actorData.SelectedItem.ToString();
-
-            string id3 = item3.Split(',')[0];
-            int Id3 = Int32.Parse(id3.Trim(c));
-
-            newFilm.CategoryId = Id;
-            newFilm.YearId = Id2;
-            newFilm.ActorId = Id3;
-
-            if (newFilm.CategoryId != 0 && newFilm.YearId != 0 && newFilm.Title != null && newFilm.ActorId != 0)
+            if (genreData.SelectedItem != null && yearData.SelectedItem != null && !string.IsNullOrEmpty(filmData.Text) && actorData.SelectedItem != null)
             {
+                var newFilm = new Film();
+                newFilm.Actor = (Actor)actorData.SelectedItem;
+                newFilm.Year = (Year)yearData.SelectedItem;
+                newFilm.Category = (Category)genreData.SelectedItem;
+                newFilm.Title = filmData.Text;
+
                 filmContext.Films.Add(newFilm);
                 filmContext.SaveChanges();
-                filmContext.UpdateRange();
+                
                 string mAdd = "New Film Added \n";
                 string cAdd = "Incorrect data!";
                 MessageBoxButton message = MessageBoxButton.OK;
                 MessageBoxImage messageBox = MessageBoxImage.Information;
                 MessageBoxResult result = MessageBox.Show(mAdd, cAdd, message, messageBox);
-                newFilm = new Film();
-                
+
                 filmAddedEvent?.Invoke();
                 this.Close();
             }
@@ -77,9 +68,21 @@ namespace Filmoteka
                 MessageBoxImage messageBox = MessageBoxImage.Information;
                 MessageBoxResult result = MessageBox.Show(mAdd, cAdd, message, messageBox);
             }
-         
-            
-            
+        }
+
+        private void OnPropertyChanged([CallerMemberName] string name = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            Categories = filmContext.Categories.ToList();
+            OnPropertyChanged(nameof(Categories));
+            Years = filmContext.Years.ToList();
+            OnPropertyChanged(nameof(Years));
+            Actors = filmContext.Actors.ToList();
+            OnPropertyChanged(nameof(Actors));
         }
     }
 }

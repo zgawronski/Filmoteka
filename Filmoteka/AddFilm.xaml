@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Filmoteka"
         xmlns:FilmotekaData="clr-namespace:FilmotekaData;assembly=FilmotekaData" x:Class="Filmoteka.AddFilm"
         mc:Ignorable="d"
-        Title="AddFilm" Height="450" Width="800" MinWidth="800" MinHeight="450" MaxWidth="800" MaxHeight="450" >
+        Title="AddFilm" Height="450" Width="800" MinWidth="800" MinHeight="450" MaxWidth="800" MaxHeight="450" Loaded="Window_Loaded" >
 
     <Window.Background>
         <ImageBrush ImageSource="/background.png" Stretch="Fill"/>
@@ -30,13 +30,13 @@
         <TextBox x:Name="filmData" Text="" HorizontalAlignment="Left" Margin="450,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7"/>
         
         <Label Content="Genre" HorizontalAlignment="Left" Margin="400,160,0,0" Foreground="#FFC8C8C8"/>
-        <ComboBox Name="genreData" HorizontalAlignment="Left" Margin="450,160,0,0" ItemsSource="{Binding Genre}" DisplayMemberPath="Genre" VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7"/>
+        <ComboBox Name="genreData" HorizontalAlignment="Left" Margin="450,160,0,0" ItemsSource="{Binding Categories, Mode=OneWay}" DisplayMemberPath="Genre" VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7"/>
         
         <Label Content="Year of Production" HorizontalAlignment="Left" Margin="335,220,0,0" Foreground="#FFC8C8C8"/>
-        <ComboBox x:Name="yearData" HorizontalAlignment="Left" Margin="450,220,0,0" ItemsSource="{Binding YearId}"  DisplayMemberPath="Year" VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7"/>
+        <ComboBox x:Name="yearData" HorizontalAlignment="Left" Margin="450,220,0,0" ItemsSource="{Binding Years, Mode=OneWay}"  DisplayMemberPath="YearProduction" VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7"/>
         
         <Label Content="Actor" HorizontalAlignment="Left" Margin="400,280,0,0" Foreground="#FFC8C8C8"/>
-        <ComboBox x:Name="actorData" HorizontalAlignment="Left" Margin="450,280,0,0" ItemsSource="{Binding ActorId}" DisplayMemberPath="Actor" VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7"/>
+        <ComboBox x:Name="actorData" HorizontalAlignment="Left" Margin="450,280,0,0" ItemsSource="{Binding Actors, Mode=OneWay}" DisplayMemberPath="ActorName" VerticalAlignment="Top" Width="200" Height="30" FontSize="14" Background="#FFC7C7C7"/>
     </Grid>
 
 </Window>
