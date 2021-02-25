@@ -7,7 +7,7 @@ using System.Windows.Navigation;
 namespace Filmoteka
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Creates the background of the entire application
     /// </summary>
     public partial class MainWindow : NavigationWindow
     {

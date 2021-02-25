@@ -3,15 +3,30 @@ using System.Collections.Generic;
 
 namespace FilmotekaData
 {
+    /// <summary>
+    /// Creating a Database - assignment and setting of relations
+    /// </summary>
     public class FilmContext : DbContext
     {
         public FilmContext(DbContextOptions<FilmContext> options) : base(options)
         {
             Database.EnsureCreated();
         }
+        /// <summary>
+        /// Creating a Database of Films
+        /// </summary>
         public DbSet<Film> Films { get; set; }
+        /// <summary>
+        /// Creating a Database of Genres
+        /// </summary>
         public DbSet<Category> Categories { get; set; }
+        /// <summary>
+        /// Creating a Database of Years
+        /// </summary>
         public DbSet<Year> Years { get; set; }
+        /// <summary>
+        /// Creating a Database of Actors
+        /// </summary>
         public DbSet<Actor> Actors { get; set; }
 
 

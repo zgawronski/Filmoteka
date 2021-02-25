@@ -3,6 +3,9 @@ using System.Collections.ObjectModel;
 
 namespace FilmotekaData
 {
+    /// <summary>
+    /// Actors Table
+    /// </summary>
     public class Actor
     {
         public int Id { get; set; }

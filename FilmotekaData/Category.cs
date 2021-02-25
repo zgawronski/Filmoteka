@@ -3,6 +3,9 @@ using System.Collections.ObjectModel;
 
 namespace FilmotekaData
 {
+    /// <summary>
+    /// Table of Film Genres
+    /// </summary>
     public class Category
     {
         

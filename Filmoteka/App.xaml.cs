@@ -6,11 +6,14 @@ using System.Windows;
 namespace Filmoteka
 {
     /// <summary>
-    /// Interaction logic for App.xaml
+    /// Startup Application
     /// </summary>
     public partial class App : Application
     {
         private ServiceProvider serviceProvider;
+        /// <summary>
+        /// Database setup Constructor
+        /// </summary>
         public App()
         {
             ServiceCollection services = new ServiceCollection();
@@ -27,7 +30,11 @@ namespace Filmoteka
 
             
         }
-
+        /// <summary>
+        /// Setting the Boot window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             var startWindow = serviceProvider.GetRequiredService<MainWindow>();

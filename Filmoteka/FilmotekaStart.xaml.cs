@@ -5,7 +5,7 @@ using System.Windows.Controls;
 namespace Filmoteka
 {
     /// <summary>
-    /// Interaction logic for FilmotekaStart.xaml
+    /// Welcoming window
     /// </summary>
     public partial class FilmotekaStart : Page
     {
@@ -17,11 +17,16 @@ namespace Filmoteka
             this.filmHome = filmHome;
         }
 
-        
+
         // ---< region : Button >---
+        /// <summary>
+        /// Button to proceed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            // navigate to next page
+            /// navigate to next page
             
             this.NavigationService.Navigate(filmHome);
         }
