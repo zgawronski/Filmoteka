@@ -44,7 +44,6 @@ namespace Filmoteka
             InitializeComponent();
             this.filmContext = filmContext;
             DataContext = this;
-            
         }
         /// <summary>
         /// Method of Adding a Film to the Database

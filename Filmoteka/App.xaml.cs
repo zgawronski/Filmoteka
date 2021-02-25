@@ -26,9 +26,7 @@ namespace Filmoteka
             services.AddSingleton<MainWindow>();
             services.AddSingleton<FilmotekaStart>();
             services.AddSingleton<AddFilm>();
-            serviceProvider = services.BuildServiceProvider();
-
-            
+            serviceProvider = services.BuildServiceProvider(); 
         }
         /// <summary>
         /// Setting the Boot window

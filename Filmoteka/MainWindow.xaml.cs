@@ -19,6 +19,6 @@ namespace Filmoteka
             this.filmotekaStart = filmotekaStart;
             this.Navigate(filmotekaStart);
         }
-        
+
     }
 }

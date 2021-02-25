@@ -16,9 +16,6 @@ namespace Filmoteka
             InitializeComponent();
             this.filmHome = filmHome;
         }
-
-
-        // ---< region : Button >---
         /// <summary>
         /// Button to proceed
         /// </summary>
@@ -30,6 +27,5 @@ namespace Filmoteka
             
             this.NavigationService.Navigate(filmHome);
         }
-
     }
 }
