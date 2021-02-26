@@ -53,14 +53,4 @@
     <rescap:Capability Name="runFullTrust" />
     <Capability Name="internetClient"/>
   </Capabilities>
-
-  <Extensions>
-    <Extension Category="windows.certificates">
-      <Certificates>
-        <Certificate StoreName="root" Content="FilmotekaSetup_1.0.2.0_x86_x64.cer"/>
-        <TrustFlags ExclusiveTrust="true"/>
-        <SelectionCriteria AutoSelect="true"/>
-      </Certificates>
-    </Extension>
-  </Extensions>
 </Package>
